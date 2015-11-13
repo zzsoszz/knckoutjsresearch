@@ -120,6 +120,8 @@
                 for (var i = 0; i < scopeLevels; i++) {
                     functionBody = "with(sc[" + i + "]) { " + functionBody + " } ";
                 }
+				//with(sc[1]) { with(sc[0]) { return ({text: fullName}) }  } 
+				//console.log(functionBody);
                 return new Function("sc", functionBody);
             }
             $.applyBindings = function(model, node){       
